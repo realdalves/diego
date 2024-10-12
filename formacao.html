@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diego Alves | Formação</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" /> 
+    <link rel="icon" type="image/x-icon" href="./img/pngwing.com (38).png">
+    <link rel="stylesheet" href="css/tooplate-infinite-loop.css" />
+    
+    
+
+    <style>
+
+    /* Seta de voltar à página inicial */
+    .back-arrow {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 35px; /* Reduzido em 30% de 50px para 35px */
+    height: 35px; /* Reduzido em 30% de 50px para 35px */
+    background-color: #0077b5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: pointer;
+    color: #ffffff; /* Cor verde neon da seta */
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 17px; /* Diminuído em 30% de 24px para 17px */
+    transition: transform 0.3s, color 0.3s;
+    animation: arrow-slide 2s infinite; /* Animação ajustada */
+    }
+
+    .back-arrow:hover {
+    transform: scale(1.3); /* Aumenta em 30% ao passar o mouse */
+    color: #39FF14; /* Verde neon ao passar o mouse */
+    text-decoration: none; /* Garante que o sublinhado não apareça ao passar o mouse */
+    }
+
+    /* Animação de deslizar para a esquerda */
+    @keyframes arrow-slide {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(0); /* Posição inicial */
+    }
+    40% {
+        transform: translateX(-10px); /* Desliza para a esquerda */
+    }
+    60% {
+        transform: translateX(-5px); /* Retorna parcialmente */
+    }
+    }
+
+
+
+
+
+
+
+      /*animação whats*/
+
+    
+      .icon {
+      position: fixed;
+      bottom: 20px; /* Define a posição no canto inferior */
+      right: 20px;  /* Define a posição no canto direito */
+      width: 60px;
+      height: 60px;
+      background-color: #25D366; /* Cor verde do WhatsApp */
+      border-radius: 50%;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      animation: bounce 2s infinite;
+      z-index: 1000; /* Certifica-se de que esteja no topo */
+      text-decoration: none;
+    }
+
+    .icon .fab {
+      color: white; /* Cor branca para o ícone do WhatsApp */
+      font-size: 30px; /* Tamanho do ícone */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-15px); /* Pular para cima */
+      }
+      60% {
+        transform: translateY(-8px);  /* Quase voltando à posição original */
+      }
+    }
+
+
+
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f2ef;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header com banner */
+        .header {
+            position: fixed; /* Torna o banner fixo */
+            top: 0;
+            left: 0;
+            right: 0;
+            background-image: url(./img/infinite-loop-01.jpg); /* Substitua com o caminho da sua imagem */
+            background-size: cover;
+            background-position: center;
+            height: 150px; /* Diminuído para 150px */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            z-index: 1; /* Para garantir que fique acima do conteúdo */
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            text-align: center; /* Centraliza o texto */
+        }
+
+        /* Estilos da foto de perfil */
+        .profile-section {
+            position: fixed; /* Torna a seção de perfil fixa */
+            top: 100px; /* Ajustado para que a foto apareça sobre o banner */
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff; /* Fundo branco para melhor contraste */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 2; /* Para garantir que fique acima do banner */
+        }
+
+        .profile-photo {
+            border-radius: 50%;
+            border: 5px solid white;
+            width: 130px; /* Aumentado em 30% de 100px para 130px */
+            height: 130px; /* Aumentado em 30% de 100px para 130px */
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-right: 20px; /* Espaço entre a foto e o texto */
+            position: relative; /* Para permitir a sobreposição */
+            top: -65px; /* Move a foto para cima, 50% do seu tamanho */
+        }
+
+        .profile-info {
+            text-align: center; /* Alinhado ao centro */
+        }
+
+        .profile-info h1 {
+            margin: 0;
+            color: #0077b5;
+        }
+
+        .profile-info p {
+            margin-top: 1px;
+            font-size: 1em; /* Diminuído para melhor ajuste */
+            text-align: center;
+        }
+
+        .btn-linkedin {
+            background-color: #0077b5;
+            color: white;
+            padding: 8px 16px; /* Ajustado para um tamanho menor */
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .btn-linkedin:hover {
+            background-color: #005582;
+        }
+
+        /* Main Sections */
+        .main-section {
+            margin: 20px;
+            margin-top: 300px; /* Espaço para o cabeçalho fixo e seção de perfil */
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #0077b5;
+        }
+
+        .experience, .skills, .contact, .education {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-item, .skill-item, .education-item {
+            margin-bottom: 10px;
+        }
+
+        .experience-item h4, .education-item h4 {
+            margin: 0;
+        }
+
+        .experience-item span, .education-item span {
+            color: #888;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #0077b5;
+            color: white;
+        }
+
+        footer i {
+            color: red;
+        }
+
+        /*animação dos cursos*/
+
+        /* Estilizando o título da seção e adicionando ícone */
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            color: #0077b5;
+        }
+
+        .section-title i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+            color: #0077b5;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .section-title:hover i {
+            transform: rotate(15deg) scale(1.2);
+            color: #39FF14;
+        }
+
+        /* Estilo para o parágrafo */
+        .education-description {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        /* Estilizando o botão de download */
+        .btn-download {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 20px;
+            background-color: #0077b5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-download:hover {
+            background-color: #005f91;
+            transform: scale(1.05);
+        }
+
+        /*animçao coração*/
+
+        .heart {
+        color: red; /* Altera a cor do coração */
+        display: inline-block; /* Necessário para a animação */
+        animation: pulse 1s infinite; /* Define a animação pulsante */
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1); /* Tamanho original */
+            }
+            50% {
+                transform: scale(1.2); /* Aumenta o tamanho */
+            }
+            100% {
+                transform: scale(1); /* Retorna ao tamanho original */
+            }
+        }
+
+        /*botão orador*/
+
+        /* Estilos do modal */
+        .modal {
+            display: none; /* Esconde o modal por padrão */
+            position: fixed;
+            z-index: 9999; /* Fica na frente */
+            left: 0;
+            top: 0;
+            width: 100%; /* Largura total */
+            height: 100%; /* Altura total */
+            overflow: auto; /* Permite rolagem se necessário */
+            background-color: rgb(0,0,0); /* Cor de fundo preta */
+            background-color: rgba(0,0,0,0.4); /* Cor de fundo preta com opacidade */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* Margem no topo e centralização */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Largura do modal */
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Seta animada de retorno -->
+    <a href="index.html" class="back-arrow">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+
+  <div class="buttonzap">
+
+    <!--API do whats -->
+    <a href='https://api.whatsapp.com/send?phone=5553992043727' class="icon" target='_blank'><i class="fab fa-whatsapp"></i></a>
+    
+  
+  </div>  
+
+  <div class="icon">
+    <i class="fab fa-whatsapp"></i>
+    <span class="tooltip">Em que posso te ajudar?</span>
+  </div>
+
+    <!-- Header com banner -->
+    <header class="header">
+        <h1>Diego Alves</h1>
+    </header>
+
+    <!-- Profile Section com foto de perfil sobre o banner -->
+    <section class="profile-section">
+        <img src="./img/testimonial-img-01.png" class="profile-photo" alt="Foto de perfil">
+
+        <div class="profile-info">
+            <h1 style="text-align: center;">Formação Acadêmica</h1>
+        
+        <!-- Botão do LinkedIn -->
+        <div style="text-align: left; margin-top: 20px;">
+            <a href="https://www.linkedin.com/in/diego-alves-qualidade-e-inovacao/" target="_blank" class="btn btn-primary" id="linkedinButton">
+            <i class="fab fa-linkedin"></i> Conectar no LinkedIn
+        </a>
+        
+        
+        
+        </div>
+
+        
+</div>
+    </section>
+
+    <!-- Main Section -->
+    <div class="main-section">
+
+        <!-- Education Section -->
+        <section class="education">
+            <h3 class="section-title">
+                <i class="fas fa-graduation-cap"></i> MBA em Tecnologia para Negócios: AI, Data Science e Big Data
+            </h3>
+            <div class="education-item">
+                <h4>PUCRS, 2023</h4><br>
+            </div>
+            <p class="education-description">
+                Este MBA foi meticulosamente projetado para capacitar profissionais a se destacarem nas mais avançadas tecnologias e tendências de mercado, incluindo Inteligência Artificial, Ciência de Dados e Big Data. Realizado na PUCRS, uma das instituições de ensino superior mais prestigiadas do Brasil, o curso em 2023 ofereceu uma experiência educacional rica e transformadora.
+
+A PUCRS é reconhecida por sua excelência acadêmica e compromisso com a inovação, reunindo um corpo docente altamente qualificado, composto por especialistas renomados e líderes de mercado. A infraestrutura de ponta da universidade, aliada a um ambiente de aprendizado colaborativo, proporciona aos alunos as ferramentas necessárias para enfrentar os desafios de um mundo em constante evolução.
+
+Os alunos deste MBA têm a oportunidade de desenvolver competências práticas e teóricas essenciais, participando de projetos reais e interagindo com profissionais do setor. Isso garante uma formação sólida e uma rede de contatos valiosa, preparando-os para se tornarem agentes de mudança em suas áreas de atuação. A PUCRS não é apenas uma escola, mas um verdadeiro centro de excelência que molda os líderes do futuro.
+            </p>
+            <a href="https://portal.pucrs.br/" class="btn-linkedin">Link para a PUCRS</a>
+            
+            <!-- Botão para baixar o TCC -->
+            <a href="downloads/diego-alves-da-silva_final_454703_414122_20231005154305.pdf" class="btn-download" download>Baixar TCC</a>
+        </section>
+        
+
+        <section class="education">
+            <h3 class="section-title">
+                <i class="fas fa-graduation-cap"></i> Bacharelado em Direito
+            </h3>
+            <div class="education-item">
+                <h4>FURG, 2023</h4><br>
+            </div>
+            <p class="education-description">
+                A graduação em Direito na Universidade Federal do Rio Grande (FURG) oferece uma formação sólida e abrangente, preparando os alunos para atuarem em diversas áreas do direito com responsabilidade social e ética. O curso proporciona uma visão crítica das ciências jurídicas, com enfoque na defesa dos direitos fundamentais e na promoção da justiça.
+
+            Com um corpo docente qualificado e estrutura de ensino avançada, a FURG é uma das instituições de maior destaque na região sul do Brasil. Ao longo da graduação, os alunos têm acesso a uma formação teórica robusta, complementada por atividades práticas, como estágios, núcleos de prática jurídica e projetos de extensão, permitindo uma experiência completa e alinhada com as demandas do mercado.
+            </p>
+            <a href="https://www.furg.br/" class="btn-linkedin">Link para a FURG</a>
+            
+            <!-- Botão para baixar o TCC -->
+            <a href="downloads/TCC - Diego Alves - Direito -FURG.pdf" class="btn-download" download>Baixar TCC</a>
+
+            <!-- video orador -->
+            <button id="openModal">Assistir Vídeo Orador</button>
+
+            <!-- Modal -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Vídeo Orador</h2>
+                    <video controls>
+                        <source src="videos/Discurso formatura - Direito  - Feito com o Clipchamp_1712281028484 (1).mp4" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                </div>
+            </div>
+
+
+        </section>  
+        
+        <section class="education">
+            <h3 class="section-title">
+                <i class="fas fa-graduation-cap"></i> Administração de Empresas
+            </h3>
+            <div class="education-item">
+                <h4>UNIFATECIE, 2024</h4><br>
+            </div>
+            <p class="education-description">
+                A graduação em Administração de Empresas na Faculdade Unifatec proporciona uma formação completa e inovadora, capacitando os alunos a atuarem em diversas áreas da gestão com responsabilidade, ética e visão empreendedora. O curso oferece uma abordagem prática e teórica, preparando os estudantes para enfrentarem os desafios do ambiente corporativo contemporâneo.
+
+            Com um corpo docente altamente qualificado e comprometido com a excelência acadêmica, a Unifatec se destaca como uma das principais instituições de ensino superior da região. Durante a graduação, os alunos têm acesso a uma formação teórica robusta, que é complementada por experiências práticas, como estágios supervisionados, projetos de pesquisa e eventos de integração com o mercado. Isso garante uma vivência alinhada às reais demandas do mundo dos negócios.
+
+            Os estudantes são estimulados a desenvolver habilidades essenciais, como liderança, trabalho em equipe e pensamento crítico, preparando-os para se tornarem líderes eficazes e inovadores. A Faculdade Unifatec não é apenas um espaço de aprendizado, mas um ambiente onde os futuros administradores são moldados para impactar positivamente o cenário empresarial e contribuir para o desenvolvimento sustentável da sociedade.
+            <BR>
+            <a href="https://unifatecie.com/?gad_source=1&gclid=CjwKCAjw9eO3BhBNEiwAoc0-jVdkzciRFPF4MmBLFtwqFke3x3cwASQjzY9clmeCbMt2CRH1C4F6hxoCVCEQAvD_BwE" class="btn-linkedin">Link para a UNIFATECIE</a>
+            
+            <!-- Botão para baixar o TCC -->
+            <a href="#" class="btn-download" download>Baixar TCC</a>
+        </section>
+
+        <section class="education">
+            <h3 class="section-title">
+                <i class="fas fa-graduation-cap"></i> Tecnólogo em Gestão da Qualidade
+            </h3>
+            <div class="education-item">
+                <h4>UNICESUMAR, 2020</h4><br>
+            </div>
+            <p class="education-description">
+                A graduação em Tecnólogo em Gestão da Qualidade da Universidade Unicesumar é projetada para formar profissionais altamente capacitados, aptos a atuar na busca pela excelência em processos e produtos nas mais diversas organizações. O curso enfatiza a importância da qualidade como um fator estratégico para o sucesso empresarial, abordando metodologias e ferramentas que garantem a melhoria contínua e a satisfação dos clientes.
+
+            Com um corpo docente experiente e uma infraestrutura moderna, a Unicesumar se destaca como uma referência no ensino superior. Os alunos são imersos em uma formação teórica sólida, complementada por atividades práticas que promovem o desenvolvimento de habilidades essenciais. Através de estudos de caso, projetos em grupo e estágios, os estudantes adquirem uma experiência real que os prepara para os desafios do mercado de trabalho.
+
+            Além disso, o currículo é atualizado constantemente para acompanhar as tendências e inovações da área da qualidade, abordando temas como gestão de processos, controle de qualidade, auditorias e certificações. A Universidade Unicesumar não apenas proporciona uma formação técnica de excelência, mas também incentiva o pensamento crítico e a ética profissional, preparando os graduados para se tornarem líderes na gestão da qualidade e contribuírem significativamente para a melhoria organizacional e para o desenvolvimento sustentável da sociedade.
+            <BR>
+            <a href="https://inscricoes.unicesumar.edu.br/?utm_content=&utm_term=unicesumar&utm_campaign=U-EAD-GG-ONG-CAP-GRA-CONV-PADR-BRAN-SS-PESQ-CPC&utm_source=adwords&utm_medium=cpc&hsa_acc=7334726990&hsa_cam=10024765118&hsa_grp=103896843271&hsa_ad=635894999258&hsa_src=g&hsa_tgt=kwd-330095837666&hsa_kw=unicesumar&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAjw9eO3BhBNEiwAoc0-jbOiIVEcJ48TSZmzioQzEYtXL79DvXHC6wXketU5Ss4w20XH9jehDRoCOvcQAvD_BwE" class="btn-linkedin">Link para a UNICESUMAR</a>
+            
+            <!-- Botão para baixar o TCC -->
+            <a href="#" class="btn-download" download>Baixar TCC</a>
+        </section>
+
+        <section class="education">
+            <h3 class="section-title">
+                <i class="fas fa-graduation-cap"></i> Curso Técnico em Comércio
+            </h3>
+            <div class="education-item">
+                <h4>Escola Técnica Getúlio Vargas, 2006</h4><br>
+            </div>
+            <p class="education-description">
+                O Curso Técnico em Comércio da Escola Técnica Getúlio Vargas, situada em Rio Grande, oferece uma formação prática e abrangente, preparando os estudantes para os desafios do mercado de trabalho. Com uma grade curricular atualizada, o curso abrange temas essenciais como gestão de vendas, marketing, atendimento ao cliente e logística, proporcionando uma base sólida para a atuação no setor comercial.
+
+            Com docentes experientes e uma metodologia que integra teoria e prática, os alunos têm a oportunidade de participar de estágios e projetos práticos, desenvolvendo habilidades essenciais para suas carreiras. Ao concluir o curso, os formandos estarão preparados para atuar em diversas funções no comércio, como assistente de vendas e analista de marketing, tornando-se profissionais valiosos para as organizações.
+            <BR>
+            <a href="https://www.facebook.com/ETEGetulioVargas/" class="btn-linkedin">Link para a ETE Getúlio Vargas</a>
+            
+        </section>
+
+        <section class="education">
+            <h3 class="section-title">
+                <i class="fas fa-graduation-cap"></i> Curso de Inglês
+            </h3>
+            <div class="education-item">
+                <h4>Topwayschool, 2021</h4><br>
+            </div>
+            <p class="education-description">
+                A Topway School se destaca no Rio Grande do Sul por seu inovador método imersivo de ensino de inglês, que proporciona uma experiência de aprendizado envolvente e eficaz. Este método permite que os alunos pratiquem a língua em situações reais, desenvolvendo suas habilidades de comunicação de forma natural. A abordagem visa criar um ambiente onde os alunos se sintam motivados e confiantes para usar o idioma desde o início.
+
+            Com um corpo docente altamente qualificado, a Topway School oferece atenção personalizada e aulas dinâmicas que incorporam materiais didáticos modernos e atividades interativas. Os alunos são incentivados a participar de debates, simulações e projetos, o que fortalece o aprendizado prático e contextualizado do idioma. Esse foco em práticas reais ajuda os estudantes a consolidar o conhecimento adquirido.
+
+            A qualidade do ensino é reforçada por avaliações periódicas e feedback constante, permitindo que os alunos monitorem seu progresso. Ao escolher a Topway School, os alunos não apenas aprendem inglês, mas também desenvolvem competências essenciais para o mercado de trabalho em um mundo globalizado. Com sua abordagem imersiva e compromisso com a excelência, a Topway School se estabelece como uma referência no ensino de idiomas.
+            <BR>
+            <a href="https://www.topwayschool.com/curso-de-ingles-rio-grande-rs" class="btn-linkedin">Link para a Topwayschool</a>
+            
+        </section>
+
+        
+
+                <!-- Skills Section -->
+                <section class="skills">
+                    <h3 class="section-title">Habilidades</h3>
+                    <div class="skill-item">
+                        <span>Desenvolvimento Web</span>
+                        <span>Avançado</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Banco de Dados</span>
+                        <span>Avançado</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Gestão de Projetos</span>
+                        <span>Avançado</span>
+                    </div>
+                </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <h3 class="section-title">Contato</h3>
+            <p><i class="fas fa-envelope"></i> diegoalves.nasa@gmail.com</p>
+            <p><i class="fas fa-phone"></i> (53) 99204-3727</p>
+            <p><i class="fas fa-map-marker-alt"></i> Porto Alegre, RS</p>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Diego Alves | Desenvolvido com muito estudo e amor <span class="heart"><i class="fas fa-heart"></i></span></p>
+    </footer>
+    
+    <script>
+        // Obter o modal
+        var modal = document.getElementById("myModal");
+
+        // Obter o botão que abre o modal
+        var btn = document.getElementById("openModal");
+
+        // Obter o elemento <span> que fecha o modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Quando o usuário clica no botão, abre o modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Quando o usuário clica no <span> (x), fecha o modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Quando o usuário clica fora do modal, fecha
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

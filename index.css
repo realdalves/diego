@@ -1,0 +1,47 @@
+body{
+    background-color: white;
+    color: #369 ; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul{
+    justify-content: space-between;
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    padding: 16px;
+}
+
+a{
+  color:  #369;
+  text-decoration: none;
+
+
+}
+
+img{
+    transform: rotate(33deg);
+    width: 180px;
+    border-radius: 50%;
+    border: 5px solid rgb(0, 225, 255);
+}
+
+.center{
+    text-align: center;
+    transform: rotate(328deg);
+         
+
+}
+
+.thanks{
+    text-align: center;
+    
+}
+.tm-footer {
+    padding: 20px; /* Espaçamento interno no rodapé (opcional) */
+    position: fixed; /* Fixa o rodapé na parte inferior da janela */
+    bottom: 0; /* Coloca o rodapé no final da janela */
+    width: 100%; /* Largura total do rodapé */
+    text-align: center;
+  }
+

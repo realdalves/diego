@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Vários Popups</title>
+    <link rel="stylesheet" href="tooplate-infinite-loop.css">
+</head>
+<body>
+
+    <!-- Botões para abrir os popups -->
+    <button class="openPopupBtn" data-popup="popup1">Abrir Popup 1</button>
+    <button class="openPopupBtn" data-popup="popup2">Abrir Popup 2</button>
+    <button class="openPopupBtn" data-popup="popup3">Abrir Popup 3</button>
+
+    <!-- Popup 1 -->
+    <div id="popup1" class="popup">
+        <div class="popup-content">
+            <span class="close" data-popup="popup1">&times;</span>
+            <h2>Popup 1</h2>
+            <p>Conteúdo do Popup 1</p>
+        </div>
+    </div>
+
+    <!-- Popup 2 -->
+    <div id="popup2" class="popup">
+        <div class="popup-content">
+            <span class="close" data-popup="popup2">&times;</span>
+            <h2>Popup 2</h2>
+            <p>Conteúdo do Popup 2</p>
+        </div>
+    </div>
+
+    <!-- Popup 3 -->
+    <div id="popup3" class="popup">
+        <div class="popup-content">
+            <span class="close" data-popup="popup3">&times;</span>
+            <h2>Popup 3</h2>
+            <p>Conteúdo do Popup 3</p>
+        </div>
+    </div>
+
+    <!-- JavaScript para abrir e fechar os popups -->
+    <script>
+        // Seleciona todos os botões de abrir e fechar
+        const openPopupBtns = document.querySelectorAll('.openPopupBtn');
+        const closePopupBtns = document.querySelectorAll('.close');
+
+        // Função para abrir o popup
+        openPopupBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const popupId = btn.getAttribute('data-popup');
+                document.getElementById(popupId).style.display = 'flex';
+            });
+        });
+
+        // Função para fechar o popup
+        closePopupBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const popupId = btn.getAttribute('data-popup');
+                document.getElementById(popupId).style.display = 'none';
+            });
+        });
+
+        // Fecha o popup ao clicar fora do conteúdo
+        window.addEventListener('click', (event) => {
+            const popups = document.querySelectorAll('.popup');
+            popups.forEach(popup => {
+                if (event.target === popup) {
+                    popup.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
